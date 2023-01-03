@@ -1,44 +1,32 @@
-# SAT Recruitment
-
-El objetivo de esta prueba es refactorizar el código de este proyecto.
-Se puede realizar cualquier cambio que considere necesario en el código y en los test.
-
-
-## Requisitos 
-
-- Todos los test deben pasar.
-- El código debe seguir los principios de la programación orientada a objetos (SOLID, DRY, etc...).
-- El código resultante debe ser mantenible y extensible.
-
 ## Refactoring
 
-* Se dividió la aplicación en capas de Controlador, Lógica de Negocio y Datos
-  * DataService se encarga de persistir y obtener la lista de los usuarios
-  * DomainManager administra la lógica de negocio de la aplicación
-  * UsersController gestiona las peticiones HTTP
-* Se desacoplaron interfaces e implementaciones. Ahora se inyectan por dependencia
-* Se agrega objeto DTO para transferir la información desde la API a la capa de dominio
-* Se agrega un mapeador de objetos para convertir DTOs en modelos de la capa de negocio
-* Se agregan clases con valores constantes para administrar los roles y mensajes de error de la aplicación
-* Se agregan logs utilizando Serilog
+* The project has been divided into different layers: Controller, Business Logic, and Data
+  * DataService is in charge of persisting and reading information about users
+  * DomainManager manages the business logic of the current application
+  * UsersController manages the HTTP requests
+* Interfaces and implementations were decoupled. Now they are used through dependency injection
+* DTO has been added to transfer the information from the API to the Business Logic layer
+* AutoMapper has been added to map DTO objects to Business Logic model objects
+* Static classes with constant values have been added to handle roles and application error messages
+* Serilog has been added to log information from the application
 
 ### API
-Se siguió el standard OpenApi para la creacion de los endpoints y los códigos de respuesta
+The standard OpenApi has been followed to create the endpoints and to manage the HTTP code responses from requests.
 
 Endpoints:
 * POST /Users/add-user
 
 ### Gifts
-* La lógica de asignación de premio monetario se incluyó como parte del mapeador de objetos para ser calculado en base al Rol del Usuario
-* De esta forma se puede manipular y entender fácilmente. También puede ser parte del modelo del Usuario, o bien ser configurable
+* The gift logic has been included in the AutoMapper mapping logic to be calculated based on the user Role
+* This way the logic can be easily handled. It can be included in the User model or configured wherever is needed
 
 ### Tests
-Se actualizaron los tests acorde a los cambios introducidos
+* Tests have been updated accordingly
 
-### Otras mejoras posibles
-Teniendo en cuenta que es un caso de prueba básico, no se profundizó en demasía la implementación a modo de no agregar complejidad innecesaria. Dependiendo de la complejidad, crecimiento del proyecto y/o cambios en el alcance se podrían implementar otros enfoques y utilizar otras herrammientas, como por ejemplo:
+### Possible enhancements
+This is a basic use case, implementations were not deeply developed to avoid adding unnecessary complexity. Depending on the complexity of the project, growth, or if the scope changes other approaches and tools can be used, for example:
 
-* Utilizar la libreria MediatR: de esta manera permite implementar el patrón CQRS para desacoplar la lectura (queries) y escritura (commands) de los datos.
-* Rescribir los métodos para que sean asíncronos
-* Agregar logs en la capa de dominio/lógica de negocio para persistir los mensajes propios de la capa
-* Implementar un manejador de excepciones
+* Using MediatR library: CQRS can be implemented in order to decouple Read operations (queries) from Create/Update/Delete operations (commands)
+* Making methods asynchronous
+* Adding logs in the Domain layer to persist its own error/debug messages
+* Developing and implementing a custom Exception handler
