@@ -23,10 +23,10 @@ Se puede realizar cualquier cambio que considere necesario en el código y en lo
 * Se agregan logs utilizando Serilog
 
 ### API
-Se siguió el standard OpenApi para la creacion de los endpoints y los codigos de respuesta
+Se siguió el standard OpenApi para la creacion de los endpoints y los códigos de respuesta
 
 Endpoints:
-* POST /users
+* POST /Users/add-user
 
 ### Gifts
 * La lógica de asignación de premio monetario se incluyó como parte del mapeador de objetos para ser calculado en base al Rol del Usuario
