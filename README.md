@@ -14,7 +14,7 @@ Se puede realizar cualquier cambio que considere necesario en el código y en lo
 
 * Se dividió la aplicación en capas de Controlador, Lógica de Negocio y Datos
   * DataService se encarga de persistir y obtener la lista de los usuarios
-  * DomainManager administra la lógica de negocio de la aplicacin
+  * DomainManager administra la lógica de negocio de la aplicación
   * UsersController gestiona las peticiones HTTP
 * Se desacoplaron interfaces e implementaciones. Ahora se inyectan por dependencia
 * Se agrega objeto DTO para transferir la información desde la API a la capa de dominio
