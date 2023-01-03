@@ -12,13 +12,13 @@ Se puede realizar cualquier cambio que considere necesario en el código y en lo
 
 ## Refactoring
 
-* Se separo la aplicación en capas de Controlador, Lógica de Negocio y Datos
+* Se dividió la aplicación en capas de Controlador, Lógica de Negocio y Datos
   * DataService se encarga de persistir y obtener la lista de los usuarios
   * DomainManager administra la lógica de negocio de la aplicacin
   * UsersController gestiona las peticiones HTTP
 * Se desacoplaron interfaces e implementaciones. Ahora se inyectan por dependencia
-* Se agregaron DTOs para transferir la información desde la API a la capa de dominio
-* Se agregó un mapeador de objetos para convertir DTOs en modelos de la capa de negocio
+* Se agrega objeto DTO para transferir la información desde la API a la capa de dominio
+* Se agrega un mapeador de objetos para convertir DTOs en modelos de la capa de negocio
 * Se agregan clases con valores constantes para administrar los roles y mensajes de error de la aplicación
 * Se agregan logs utilizando Serilog
 
