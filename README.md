@@ -26,7 +26,7 @@ Endpoints:
 ### Possible enhancements
 This is a basic use case, implementations were not deeply developed to avoid adding unnecessary complexity. Depending on the complexity of the project, growth, or if the scope changes other approaches and tools can be used, for example:
 
-* Using MediatR library: CQRS can be implemented in order to decouple Read operations (queries) from Create/Update/Delete operations (commands)
+* Using MediatR library: CQRS pattern can be implemented in order to decouple Read operations (queries) from Create/Update/Delete operations (commands)
 * Making methods asynchronous
 * Adding logs in the Domain layer to persist its own error/debug messages
 * Developing and implementing a custom Exception handler
